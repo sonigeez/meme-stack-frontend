@@ -8,6 +8,7 @@ Welcome to MEMESTACK, where the world of programming meets the creativity and hu
 
 
 ## How to Contribute
+- fork this repo https://github.com/sonigeez/meme-stack 
 - Meme Relevance: ensure your meme is related to programming concepts and is understandable to those learning programming.
 
 

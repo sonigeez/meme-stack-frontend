@@ -14,7 +14,7 @@ export default function Byline({ className }: { className: string }) {
                 <div className="text-sm text-gray-400">
                     <a
                         className="underline decoration-dotted underline-offset-4 transition-colors hover:text-gray-300"
-                        href="https://github.com/sonigeez/meme-stack"
+                        href="https://github.com/sonigeez/meme-stack-frontend"
                         target="_blank"
                         rel="noreferrer"
                     >
