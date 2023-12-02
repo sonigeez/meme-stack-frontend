@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import Head from 'next/head';
 import Image from 'next/image';
 import ModalSheet from '#/ui/ModaSheet';
+import { flushSync } from 'react-dom';
 
 
 
@@ -15,6 +16,35 @@ export default function Page({ params }: { params: Params }) {
     const [selectedImage, setSelectedImage] = useState(null);
     const [isModalOpen, setIsModalOpen] = useState(false);
 
+
+    const startViewTransition = (open: boolean | ((prevState: boolean) => boolean)) => {
+        if (!document.startViewTransition) {
+            console.log('View Transitions are not supported');
+            // Fallback for browsers without View Transitions support
+            setIsModalOpen(open);
+            if (!open) setSelectedImage(null);
+            return;
+        }
+        console.log('View Transitions are supported');
+
+        const transition = document.startViewTransition(() => {
+            flushSync(() => {
+                setIsModalOpen(open);
+                if (!open) setSelectedImage(null);
+            });
+
+
+
+
+        });
+
+        transition.finished.then(() => {
+            // Handle the completion of the transition
+            // Add any additional logic needed after the transition completes
+        });
+    };
+
+
     useEffect(() => {
         const repoPath = 'sonigeez/meme-stack/contents/' + params.name;
         fetchImagesFromGitHub(repoPath)
@@ -26,12 +56,11 @@ export default function Page({ params }: { params: Params }) {
 
     const openModal = (image: any) => {
         setSelectedImage(image);
-        setIsModalOpen(true);
+        startViewTransition(true);
     };
 
     const closeModal = () => {
-        setIsModalOpen(false);
-        setSelectedImage(null);
+        startViewTransition(false);
     };
 
     return (
