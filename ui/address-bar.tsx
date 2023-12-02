@@ -37,6 +37,10 @@ function Params() {
 
 export function AddressBar() {
   const pathname = usePathname();
+  const origin =
+    typeof window !== 'undefined' && window.location.origin
+      ? window.location.origin
+      : '';
 
   return (
     <div className="flex items-center gap-x-2 p-3.5 lg:px-5 lg:py-3">
@@ -56,7 +60,7 @@ export function AddressBar() {
       </div>
       <div className="flex gap-x-1 text-sm font-medium">
         <div>
-          <span className="px-2 text-gray-400">{window.location.origin}</span>
+          <span className="px-2 text-gray-400">{origin}</span>
         </div>
         {pathname ? (
           <>
