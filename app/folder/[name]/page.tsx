@@ -18,6 +18,7 @@ export default function Page({ params }: { params: Params }) {
 
 
     const startViewTransition = (open: boolean | ((prevState: boolean) => boolean)) => {
+        //@ts-ignore
         if (!document.startViewTransition) {
             console.log('View Transitions are not supported');
             // Fallback for browsers without View Transitions support
@@ -27,6 +28,7 @@ export default function Page({ params }: { params: Params }) {
         }
         console.log('View Transitions are supported');
 
+        //@ts-ignore
         const transition = document.startViewTransition(() => {
             flushSync(() => {
                 setIsModalOpen(open);
