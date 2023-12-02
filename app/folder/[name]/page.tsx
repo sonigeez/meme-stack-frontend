@@ -2,7 +2,7 @@
 import { useState, useEffect } from 'react';
 import Head from 'next/head';
 import Image from 'next/image';
-import ModalSheet from '#/ui/ModaSheet';
+import ModalSheet from '#/ui/ModalSheet';
 import { flushSync } from 'react-dom';
 
 
