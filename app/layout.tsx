@@ -10,6 +10,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="[color-scheme:dark]">
+      <head>
+        <title> Meme Stack</title>
+        <meta name="description" content="Meme Stack" />
+      </head>
       <body className="bg-gray-1100 overflow-y-scroll bg-[url('/grid.svg')] pb-36">
         <GlobalNav />
         <div className="lg:pl-64">
