@@ -70,14 +70,13 @@ export default function Page({ params }: { params: Params }) {
             <Head>
                 <title>{params.name}</title>
                 <meta name="description" content="Meme Stack" />
-
             </Head>
             <main className="mx-auto max-w-[1960px] p-4">
                 <div className="columns-1 gap-4 sm:columns-2 xl:columns-3 2xl:columns-2">
                     {images.map((image: any) => (
                         <div
                             key={image.name}
-                            className="rounded-lg mb-4 shaodw-xl cursor-pointer bg-zinc-500"
+                            className="relative group rounded-lg mb-4 shadow-xl cursor-pointer bg-zinc-500 hover:bg-opacity-75"
                             onClick={() => openModal("https://cdn.statically.io/gh/sonigeez/meme-stack/main/" + params.name + "/" + image.name)}
                         >
                             <Image
@@ -87,6 +86,9 @@ export default function Page({ params }: { params: Params }) {
                                 alt={image.name}
                                 className="w-full saturate-150 rounded-md"
                             />
+                            <div className="absolute bottom-0 w-full text-center text-white bg-black bg-opacity-50 p-2 hidden group-hover:block">
+                                {image.name}
+                            </div>
                         </div>
                     ))}
                 </div>
@@ -94,6 +96,7 @@ export default function Page({ params }: { params: Params }) {
 
             <ModalSheet isOpen={isModalOpen} closeModal={closeModal} image={selectedImage} />
         </>
+
     );
 }
 
