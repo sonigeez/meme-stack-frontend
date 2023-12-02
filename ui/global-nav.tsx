@@ -5,6 +5,7 @@ import { useParams, } from 'next/navigation';
 import { MenuAlt2Icon, XIcon } from '@heroicons/react/solid';
 import clsx from 'clsx';
 import { useEffect, useState } from 'react';
+import Byline from './ByLine';
 
 export function GlobalNav() {
   const [isOpen, setIsOpen] = useState(false);
@@ -74,6 +75,8 @@ export function GlobalNav() {
             />
           ))}
         </nav>
+        <Byline className="absolute hidden sm:block" />
+
       </div>
     </div>
   );
