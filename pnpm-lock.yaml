@@ -11,6 +11,9 @@ dependencies:
   '@heroicons/react':
     specifier: 1.0.6
     version: 1.0.6(react@18.2.0)
+  '@vercel/analytics':
+    specifier: 1.1.1
+    version: 1.1.1
   clsx:
     specifier: 1.2.1
     version: 1.2.1
@@ -28,7 +31,7 @@ dependencies:
     version: 3.0.0-canary.1
   next:
     specifier: 14.0.3-canary.7
-    version: 14.0.3-canary.7(@babel/core@7.22.1)(react-dom@18.2.0)(react@18.2.0)
+    version: 14.0.3-canary.7(@babel/core@7.20.7)(react-dom@18.2.0)(react@18.2.0)
   react:
     specifier: 18.2.0
     version: 18.2.0
@@ -3552,6 +3555,12 @@ packages:
 
   /@vanilla-extract/private@1.0.3:
     resolution: {integrity: sha512-17kVyLq3ePTKOkveHxXuIJZtGYs+cSoev7BlP+Lf4916qfDhk/HBjvlYDe8egrea7LNPHKwSZJK/bzZC+Q6AwQ==}
+    dev: false
+
+  /@vercel/analytics@1.1.1:
+    resolution: {integrity: sha512-+NqgNmSabg3IFfxYhrWCfB/H+RCUOCR5ExRudNG2+pcRehq628DJB5e1u1xqwpLtn4pAYii4D98w7kofORAGQA==}
+    dependencies:
+      server-only: 0.0.1
     dev: false
 
   /@vercel/build-utils@6.7.5:
@@ -7439,7 +7448,7 @@ packages:
     engines: {node: '>= 0.4.0'}
     dev: false
 
-  /next@14.0.3-canary.7(@babel/core@7.22.1)(react-dom@18.2.0)(react@18.2.0):
+  /next@14.0.3-canary.7(@babel/core@7.20.7)(react-dom@18.2.0)(react@18.2.0):
     resolution: {integrity: sha512-sKs0g4W9peVtoBo1invR/AbH/tIJaNdCNGBPZ/TUX1jft7FwBSWqnnyPKzDTzcgw/90FIgAXCjA1AJQMlOrzYQ==}
     engines: {node: '>=18.17.0'}
     hasBin: true
@@ -7461,7 +7470,7 @@ packages:
       postcss: 8.4.31
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
-      styled-jsx: 5.1.1(@babel/core@7.22.1)(react@18.2.0)
+      styled-jsx: 5.1.1(@babel/core@7.20.7)(react@18.2.0)
       watchpack: 2.4.0
     optionalDependencies:
       '@next/swc-darwin-arm64': 14.0.3-canary.7
@@ -8867,7 +8876,7 @@ packages:
       - supports-color
     dev: false
 
-  /styled-jsx@5.1.1(@babel/core@7.22.1)(react@18.2.0):
+  /styled-jsx@5.1.1(@babel/core@7.20.7)(react@18.2.0):
     resolution: {integrity: sha512-pW7uC1l4mBZ8ugbiZrcIsiIvVx1UmTfw7UkC3Um2tmfUq9Bhk8IiyEIPl6F8agHgjzku6j0xQEZbfA5uSgSaCw==}
     engines: {node: '>= 12.0.0'}
     peerDependencies:
@@ -8880,7 +8889,7 @@ packages:
       babel-plugin-macros:
         optional: true
     dependencies:
-      '@babel/core': 7.22.1
+      '@babel/core': 7.20.7
       client-only: 0.0.1
       react: 18.2.0
     dev: false
