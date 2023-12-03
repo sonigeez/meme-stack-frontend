@@ -90,7 +90,6 @@ function GlobalNavItem({
   close: () => false | void;
 }) {
   const segment = useParams();
-  console.log(segment);
   const isActive = item === segment.name;
 
   return (

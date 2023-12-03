@@ -113,7 +113,6 @@ async function fetchImagesFromGitHub(repoPath: string, accessToken = null) {
     try {
         const response = await fetch(`${baseUrl}/${repoPath}`, { headers });
         const data = await response.json();
-        console.log(data);
 
         if (!response.ok) {
             throw new Error(`GitHub API responded with ${response.status}: ${JSON.stringify(data)}`);
